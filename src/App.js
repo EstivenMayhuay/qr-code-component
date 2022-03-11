@@ -1,12 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import CardQR from "./CardQR";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello Estiven</h1>
-    </div>
-  );
-}
+const App = () => {
+  return <CardQR />;
+};
 
 export default App;

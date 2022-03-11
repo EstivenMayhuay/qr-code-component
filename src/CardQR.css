@@ -1,0 +1,98 @@
+:root {
+  --wCard: 300px;
+  --hCard: 440px;
+  --hImg: 300px;
+
+  /* colors */
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+.cardQR {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1em;
+  width: var(--wCard);
+  height: var(--hCard);
+  padding: 1em;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 1em;
+  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cardQR__img {
+  position: relative;
+  height: calc(var(--hImg) - 1em);
+  border-radius: 1em;
+}
+
+.cardQR__img::after {
+  content: "Scan Me";
+  position: absolute;
+  top: -35px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 200px;
+  height: 40px;
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: 700;
+  background: var(--dark-blue);
+  border-radius: 0.5em;
+  animation: fake 3s ease infinite alternate;
+}
+
+@keyframes fake {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cardQR__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardQR__descp {
+  height: calc(var(--hCard) - var(--hImg) - 1em);
+  overflow: hidden;
+}
+
+.cardQR__descp h1 {
+  font-size: 1.2em;
+  color: var(--dark-blue);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.cardQR__descp p {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 0.9em;
+  color: var(--grayish-blue);
+}
